@@ -47,10 +47,5 @@ def get_mask_account(account_number: str) -> str:
     if len(digits) != 20:
         raise ValueError("Номер счёта должен содержать 20 цифр")
 
-    # Заменяем все цифры, кроме последних 4, на звёздочки
-    masked = "*" * 16 + digits[-4:]
-
-    # Разбиваем на блоки по 4 символа с пробелами
-    formatted = " ".join(masked[i : i + 4] for i in range(0, 20, 4))
-
-    return formatted
+    # Заменяем цифры, кроме последних 4, на две звёздочки
+    return f'**{digits[-4:]}'
