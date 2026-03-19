@@ -2,12 +2,6 @@ def get_mask_card_number(card_number: str) -> str:
     """
     Маскирует номер банковской карты.
     Формат: XXXX XX** **** XXXX (видно первые 6 и последние 4 цифры, остальное — звёздочки).
-
-    Args:
-    card_number (str): номер карты без пробелов
-
-    Returns:
-    str: замаскированный номер карты
     """
     # Удаляем пробелы и другие символы, оставляем только цифры
     digits = "".join(filter(str.isdigit, card_number))
